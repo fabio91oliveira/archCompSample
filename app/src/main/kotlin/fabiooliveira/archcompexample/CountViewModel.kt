@@ -5,11 +5,7 @@ import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 class CountViewModel: ViewModel() {
-    private var count: MutableLiveData<Int> = MutableLiveData()
-
-    init {
-        count.value = 0
-    }
+    private var count = MutableLiveData<Int>().apply { value = 0 }
 
     fun getCount(): LiveData<Int> {
         return count
